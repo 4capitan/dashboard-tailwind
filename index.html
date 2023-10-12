@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Dashboard Tailwind</title>
+</head>
+
+<body>
+
+    <div
+        class="sidebar fixed top-0 left-0 bg-slate-100 w-[230px] h-full z-[2000] overflow-x-hidden transition-all ease-liner duration-300">
+        <a href="" class="logo text-[24px] font-bold h-[56px] flex items-center text-blue-500 z-[500] pb-5 box-content">
+            <i class='bx bx-code-alt min-w-[60px] flex justify-center text-[2.2rem] '></i>
+            <div class="logo-name">
+                <span class="text-slate-700">Renso</span>Code
+            </div>
+        </a>
+        <ul class="side-menu w-full mt-12 ">
+            <li class="active h-12 bg-transparent ml-1.5 rounded-t-[48px] rounded-b-[48px] bg-grey-700 p-1 relative"><a href="#"
+                    class="w-full h-full bg-slate-100 flex items-center rounded-[48px] text-green-700 whitespace-nowrap overflow-x-hidden transition-all ease-liner duration-300 text-base"><i
+                        class='bx bx-analyse text-green-700 min-w-calc(60px - ((4px + 6px) * 2)) flex text-[1.6rem]  justify-center'></i>Analytics</a>
+            </li>
+            <li class="h-12 bg-transparent ml-1.5 rounded-3xl p-1"><a href="#"
+                    class="w-full h-full bg-slate-100 flex items-center rounded-3xl text-slate-700 whitespace-nowrap overflow-x-hidden transition-all ease-liner duration-300 text-base"><i
+                        class='bx bxs-dashboard  min-w-calc(60px - ((4px + 6px) * 2)) flex text-[1.6rem] justify-center'></i>Dashboard</a></li>
+            <li class="h-12 bg-transparent ml-1.5 rounded-3xl p-1"><a href="#"
+                    class="w-full h-full bg-slate-100 flex items-center rounded-3xl] text-slate-700 whitespace-nowrap overflow-x-hidden transition-all ease-liner duration-300 text-base"><i
+                        class='bx bx-store-alt min-w-calc(60px - ((4px + 6px) * 2)) flex text-[1.6rem]  justify-center'></i>Tienda</a></li>
+            <li class="h-12 bg-transparent ml-1.5 rounded-3xl p-1"><a href="#"
+                    class="w-full h-full bg-slate-100 flex items-center rounded-3xl text-slate-700 whitespace-nowrap overflow-x-hidden transition-all ease-liner duration-300 text-base"><i
+                        class='bx bx-message-square-dots min-w-calc(60px - ((4px + 6px) * 2)) flex text-[1.6rem]  justify-center'></i>Tickets</a></li>
+            <li class="h-12 bg-transparent ml-1.5 rounded-3xl p-1"><a href="#"
+                    class="w-full h-full bg-slate-100 flex items-center rounded-3xl text-slate-700 whitespace-nowrap overflow-x-hidden transition-all ease-liner duration-300 text-base"><i
+                        class='bx bx-group min-w-calc(60px - ((4px + 6px) * 2)) flex text-[1.6rem]  justify-center'></i>Usuarios</a></li>
+            <li class="h-12 bg-transparent ml-1.5 rounded-3xl p-1"><a href="#"
+                    class="w-full h-full bg-slate-100 flex items-center rounded-3xl text-slate-700 whitespace-nowrap overflow-x-hidden transition-all ease-liner duration-300 text-base"><i
+                        class='bx bx-cog min-w-calc(60px - ((4px + 6px) * 2)) flex text-[1.6rem]  justify-center'></i>Ajustes</a></li>
+        </ul>
+        <ul class="side-menu w-full mt-12">
+            <li class="h-12 bg-transparent ml-1.5 rounded-3xl p-1">
+                <a href="#" class="logout w-full h-full bg-slate-100 flex items-center rounded-3xl text-red-500 whitespace-nowrap overflow-x-hidden transition-all ease-liner duration-300">
+                    <i class='bx bx-log-out-circle min-w-calc(60px - ((4px + 6px) * 2)) flex text-[1.6rem] justify-centr'></i>
+                    Cerrar Sesión
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="content relative w-calc(100%-60px)
+     left-[230px] transition-all ease-liner duration-300">
+        <!-- Navbar -->
+        <nav class="h-14 bg-slate-50 pr-6 flex items-center gap-6 sticky top-0 left-0 z-[1000]">
+            <i class='bx bx-menu cursor-pointer text-black'></i>
+            <form class="search-form max-w-[400px] w-full mr-auto" action="#">
+                <div class="form-input flex items-center h-9">
+                    <input class="grow px-4 py-0 h-full border-none text-grey rounded-tl-[36px] rounded-bl-[36px] outline-none w-full text-black" 
+                    type="search" placeholder="Search...">
+                    <button class="search-btn w-20 h-full flex justify-center items-center bg-blue-500 text-slate-700 
+                    text-lg border-none outline-none rounded-tr-[36px] rounded-br-[36px] cursor-pointer" type="submit">
+                        <i class='bx bx-search'></i></button>   
+                </div>
+            </form>
+            <input type="checkbox" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggle block min-w-[50px] 
+            h-6 bg-grey-500 cursor-pointer relative rounded-[25px]"></label>
+            <a href="#" class="notif text-xl relative">
+                <i class='bx bx-bell'></i>
+                <span class="count absolute top-[-6px] right-[-6px] w-5 h-5 bg-red-500 rounded-[50%] text-slate-700 border-2 border-solid font-bold text-xs flex items-center justify-center">17</span>
+            </a>
+            <a href="#" class="profile">
+                <img class="w-9 h-9 object-cover rounded-[50%]" src="images/logo-renso.png">
+            </a>
+        </nav>
+
+        <main class="w-full py-9 px-6 max-h-calc(100vh-56px)">
+            <div class="header flex items-center justify-between gap-4 flex-wrap">
+                <div class="left">
+                    <h1 class="text-[36px] font-semibold mb-2.5 text-black">Panel</h1>
+                    <ul class="breadcrumb flex items-center gap-4">
+                        <li class="text-black"><a href="#" class="text-stone-800 pointer-events-none">
+                                Dashboard
+                            </a></li>
+                        /
+                        <li class="text-black"><a href="#" class="text-red-500 pointer-events-none">Internal</a></li>
+                        /
+                        <li class="text-black"><a href="#" class="active text-blue-700 pointer-events-none ">Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="right flex">
+                    <a href="#" class="report-btn edit mr-2.5 h-9 p-0 p-4 rounded-3xl bg-blue-500 flex items-center justify-center gap-2.5 font-medium">
+                        <i class='bx bx-edit-alt'></i>
+                        <span>Edit Dashboard</span>
+                    </a>
+
+                    <a href="#" class="report-btn h-9 p-0 p-4 rounded-3xl bg-blue-500 flex items-center justify-center gap-2.5 font-medium">
+                        <i class='bx bx-cloud-download'></i>
+                        <span>Download CSV</span>
+                    </a>
+                </div>
+            </div>
+
+            <ul class="insights grid grid-cols-4 gap-6 mt-9">
+                <li class="p-6 bg-slate-100 rounded-[20px] flex items-center gap-6 cursor-pointer">
+                    <i class='bx bx-calendar-check w-20 h-20 rounded-[10px] text-4xl flex items-center justify-center bg-red-500 text-red-100'></i>
+                    <span class="info">
+                        <h3 class="text-2xl font-semibold text-black">
+                            1,074
+                        </h3>
+                        <p class="text-black">Orden de Pago</p>
+                    </span>
+                </li>
+                <li class="p-6 bg-slate-100 rounded-2xl flex items-center gap-6 cursor-pointer">
+                    <i class='bx bx-show-alt w-20 h-20 rounded-xl text-4xl flex items-center justify-center bg-blue-500 text-blue-100'></i>
+                    <span class="info">
+                        <h3 class="text-2xl font-semibold text-black">
+                            3,944
+                        </h3>
+                        <p class="text-black">Visita El Sitio</p>
+                    </span>
+                </li>
+                <li class="p-6 bg-slate-100 rounded-2xl flex items-center gap-6 cursor-pointer">
+                    <i class='bx bx-line-chart w-20 h-20 rounded-xl text-4xl flex items-center justify-center bg-green-500 text-green-100'></i>
+                    <span class="info">
+                        <h3 class="text-2xl font-semibold text-black">
+                            14,721
+                        </h3>
+                        <p class="text-black">Búsquedas</p>
+                    </span>
+                </li>
+                <li class="p-6 bg-slate-100 rounded-2xl flex items-center gap-6 cursor-pointer">
+                    <i class='bx bx-dollar-circle w-20 h-20 rounded-xl text-4xl flex items-center justify-center bg-yellow-500 text-yellow-100'></i>
+                    <span class="info">
+                        <h3 class="text-2xl font-semibold text-black">
+                            $6,742
+                        </h3>
+                        <p class="text-black">Ventas Totales</p>
+                    </span>
+                </li>
+                <li class="li-width-50 col-span-2 p-6 bg-slate-100 rounded-2xl flex items-center gap-6 cursor-pointer">
+                    <i class='bx bxs-dog w-20 h-20 rounded-xl text-4xl flex items-center justify-center bg-orange-500 text-orange-100'></i>
+                    <span class="info">
+                        <h3 class="text-2xl font-semibold text-black">
+                            2,000
+                        </h3>
+                        <p class="text-black">Proveedores</p>
+                    </span>
+                </li>
+                <li class="li-width-50 col-span-2 p-6 bg-slate-100 rounded-2xl flex items-center gap-6 cursor-pointer">
+                    <i class='bx bxs-cat w-20 h-20 rounded-xl text-4xl flex items-center justify-center bg-pink-500 text-pink-100'></i>
+                    <span class="info">
+                        <h3 class="text-2xl font-semibold text-black">
+                            13,000
+                        </h3>
+                        <p class="text-black">Productos</p>
+                    </span>
+                </li>
+                <li class="li-width-75 col-span-3 p-6 bg-slate-100 rounded-2xl flex items-center gap-6 cursor-pointer">
+                    <i class='bx bxs-dog w-20 h-20 rounded-xl text-4xl flex items-center justify-center bg-sky-500 text-sky-100'></i>
+                    <span class="info">
+                        <h3 class="text-2xl font-semibold text-black">
+                            2,000
+                        </h3>
+                        <p class="text-black">Perro</p>
+                    </span>
+                </li>
+                <li class="li-width-25 p-6 bg-slate-100 rounded-2xl flex items-center gap-6 cursor-pointer">
+                    <i class='bx bxs-cat w-20 h-20 rounded-xl text-4xl flex items-center justify-center bg-purple-500 text-purple-100'></i>
+                    <span class="info">
+                        <h3 class="text-2xl font-semibold text-black">
+                            13,000
+                        </h3>
+                        <p class="text-black">Gato</p>
+                    </span>
+                </li>
+            </ul>
+
+            <div class="bottom-data flex flex-wrap gap-6 mt-6 w-full text-black rounded-3xl bg-slate-100 p-4 overflow-x-auto">
+                <div class="orders grow basis-[500px]">
+                    <div class="header flex items-center gap-4 mt-6 basis-auto">
+                        <i class='bx bx-receipt cursor-pointer'></i>
+                        <h3 class="mr-auto text-2xl font-semibold">Órdenes Recientes</h3>
+                        <i class='bx bx-filter'></i>
+                        <i class='bx bx-search'></i>
+                    </div>
+                    <table class="w-full border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="pb-3 text-[13px] text-left border-0 border-solid border-gray-300">Usuario</th>
+                                <th class="pb-3 text-[13px] text-left border-0 border-solid border-gray-300">Fecha de Orden</th>
+                                <th class="pb-3 text-[13px] text-left border-0 border-solid border-gray-300">Estado</th>
+                                <th class="pb-3 text-[13px] text-left border-0 border-solid border-gray-300">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="cursor-pointer transition-all ease-liner duration-300">
+                                <td class="p-4 flex items-center gap-3 pl-1.5">
+                                    <img class="w-9 h-9 rounded-[50%] object-cover" src="images/profile-1.jpg">
+                                    <p>Luis Suarez</p>
+                                </td>
+                                <td>14-08-2023</td>
+                                <td><span class="status completed text-xs font-bold py-1.5 px-4 rounded-[20px] text-slate-50 bg-green-500">Terminado</span></td>
+                                <td><i class="bx bx-trash"></i></td>
+                            </tr>
+                            <tr class="cursor-pointer transition-all ease-liner duration-300">
+                                <td class="p-4 flex items-center gap-3 pl-1.5">
+                                    <img class="w-9 h-9 rounded-[50%] object-cover" src="images/profile-1.jpg">
+                                    <p>Luis Suarez</p>
+                                </td>
+                                <td>14-08-2023</td>
+                                <td><span class="status pending text-xs font-bold py-1.5 px-4 rounded-[20px] text-slate-50 bg-orange-500">Pendiente</span></td>
+                                <td><i class="bx bx-trash"></i></td>
+                            </tr>
+                            <tr class="cursor-pointer transition-all ease-liner duration-300">
+                                <td class="p-4 flex items-center gap-3 pl-1.5">
+                                    <img class="w-9 h-9 rounded-[50%] object-cover" src="images/profile-1.jpg">
+                                    <p>Luis Suarez</p>
+                                </td>
+                                <td>14-08-2023</td>
+                                <td><span class="status process text-xs font-bold py-1.5 px-4 rounded-[20px] text-slate-50 bg-purple-500">
+                                        Procesando</span></td>
+                                <td><i class="bx bx-trash"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="reminders grow basis-80">
+                    <div class="header">
+                        <i class='bx bx-note'></i>
+                        <h3>Recordatorios</h3>
+                        <i class='bx bx-filter'></i>
+                        <i class='bx bx-plus'></i>
+                    </div>
+                    <ul class="task-list w-full">
+                        <li class="completed w-full mb-4 bg-grey-500 py-3.5 px-2.5 rounded-[10px] flex items-center justify-between border-l-[10px] border-solid border-green-500">
+                            <div class="task-title flex items-center">
+                                <i class='bx bx-check-circle cursor-pointer'></i>
+                                <p class="ml-1.5">Iniciar Nuestra Reunión</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                        <li class="completed w-full mb-4 bg-grey-500 p-3.5 p-2.5 rounded-xl flex items-center justify-between border-l-[10px] border-solid border-green-500">
+                            <div class="task-title flex items-center">
+                                <i class='bx bx-check-circle cursor-pointer'></i>
+                                <p class="ml-1.5">Analiza Nuestro Sitio</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                        <li class="not-completed w-full mb-4 bg-grey-500 p-3.5 p-2.5 rounded-xl flex items-center justify-between border-l-[10px] border-solid border-red-500 mb-0">
+                            <div class="task-title flex items-center">
+                                <i class='bx bx-x-circle cursor-pointer'></i>
+                                <p class="ml-1.5">Volar Aviones en Simulador</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- End of Reminders-->
+                <div class="reminders  grow basis-80">
+                    <div class="header">
+                        <i class='bx bx-dollar-circle cursor-pointer'></i>
+                        <h3>Ventas Totales</h3>
+                        <i class='bx bx-filter cursor-pointer'></i>
+                        <i class='bx bx-plus cursor-pointer'></i>
+                    </div>
+                    <ul class="task-list w-full">
+                        <li class="completed w-full mb-4 bg-grey-500 py-3.5 px-2.5 rounded-xl flex items-center justify-between border-l-8 border-solid border-green-500">
+                            <div class="task-title flex items-center">
+                                <i class='bx bx-check-circle cursor-pointer'></i>
+                                <p class="ml-1.5">Iniciar Nuestra Reunión</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded cursor-pointer'></i>
+                        </li>
+                        <li class="completed w-full mb-4 bg-grey-500 py-3.5 px-2.5 rounded-xl flex items-center justify-between border-l-8 border-solid border-green-500">
+                            <div class="task-title flex items-center">
+                                <i class='bx bx-check-circle cursor-pointer'></i>
+                                <p class="ml-1.5">Analiza Nuestro Sitio</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded cursor-pointer'></i>
+                        </li>
+                        <li class="not-completed w-full mb-4 bg-grey-500 p-3.5 p-2.5 rounded-xl flex items-center justify-between border-l-8 border-solid border-red-500 mb-0">
+                            <div class="task-title flex items-center">
+                                <i class='bx bx-x-circle cursor-pointer'></i>
+                                <p class="ml-1.5">Volar Aviones en Simulador</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded cursor-pointer'></i>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="reminders  grow basis-80">
+                    <div class="header">
+                        <i class='bx bxs-dog cursor-pointer'></i>
+                        <h3>Proveedores</h3>
+                        <i class='bx bx-filter cursor-pointer'></i>
+                        <i class='bx bx-plus cursor-pointer'></i>
+                    </div>
+                    <ul class="task-list w-full">
+                        <li class="completed w-full mb-4 bg-grey-500 py-3.5 px-2.5 rounded-xl flex items-center justify-between border-l-8 border-solid border-green-500">
+                            <div class="task-title flex items-center">
+                                <i class='bx bx-check-circle cursor-pointer'></i>
+                                <p class="ml-1.5">Iniciar Nuestra Reunión</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded cursor-pointer'></i>
+                        </li>
+                        <li class="completed w-full mb-4 bg-grey-500 py-3.5 px-2.5 rounded-xl flex items-center justify-between border-l-8 border-solid border-green-500">
+                            <div class="task-title flex items-center">
+                                <i class='bx bx-check-circle cursor-pointer'></i>
+                                <p>Analiza Nuestro Sitio</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded cursor-pointer'></i>
+                        </li>
+                        <li class="not-completed w-full mb-4 bg-grey-500 p-3.5 p-2.5 rounded-xl flex items-center justify-between border-l-8 border-solid border-red-500 mb-0">
+                            <div class="task-title flex items-center">
+                                <i class='bx bx-x-circle cursor-pointer'></i>
+                                <p class="ml-1.5">Volar Aviones en Simulador</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded cursor-pointer'></i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="reminders  grow basis-80">
+                    <div class="header">
+                        <i class='bx bxs-cat cursor-pointer'></i>
+                        <h3>Productos</h3>
+                        <i class='bx bx-filter cursor-pointer'></i>
+                        <i class='bx bx-plus cursor-pointer'></i>
+                    </div>
+                    <ul class="task-list w-full">
+                        <li class="completed w-full mb-4 bg-grey-500 py-3.5 px-2.5 rounded-xl flex items-center justify-between border-l-8 border-solid border-green-500">
+                            <div class="task-title flex items-center">
+                                <i class='bx bx-check-circle cursor-pointer'></i>
+                                <p class="ml-1.5">Iniciar Nuestra Reunión</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded cursor-pointer'></i>
+                        </li>
+                        <li class="completed w-full mb-4 bg-grey-500 py-3.5 px-2.5 rounded-xl flex items-center justify-between border-l-8 border-solid border-green-500">
+                            <div class="task-title flex items-center">
+                                <i class='bx bx-check-circle cursor-pointer'></i>
+                                <p class="ml-1.5">Analiza Nuestro Sitio</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded cursor-pointer'></i>
+                        </li>
+                        <li class="not-completed w-full mb-4 bg-grey-500 p-3.5 p-2.5 rounded-xl flex items-center justify-between border-l-8 border-solid border-red-500 mb-0">
+                            <div class="task-title flex items-center">
+                                <i class='bx bx-x-circle cursor-pointer'></i>
+                                <p class="ml-1.5">Volar Aviones en Simulador</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded cursor-pointer'></i>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+    </div>
+
+        <script src="index.js"></script>
+        </body>
+
+
+</html>
